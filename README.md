@@ -9,13 +9,14 @@ You'll need poetry, or make a virtualenv and pip install the repo.
 ```shell
 git clone <repo url> && cd <repo name>
 poetry install
-poetry run uvicorn tailscale_webfinger:app
+poetry run tailscale-webfinger
 ```
 
 ## Environment vars
 
 - KANIDM_DOMAIN - the hostname of your Kanidm server
 - CLIENT_ID - the client ID of the Tailscale config on your Kanidm server
+- LISTEN_HOST - the host to listen to, defaults to `127.0.0.1`
 
 It'll respond with this if you have `idp.example.com`and `tailscale` respectively:
 

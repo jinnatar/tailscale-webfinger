@@ -14,7 +14,7 @@ app = FastAPI()
 
 
 def uvicorn_run():
-    uvicorn.run("tailscale_webfinger:app")
+    uvicorn.run("tailscale_webfinger:app", host=os.getenv('LISTEN_HOST', '127.0.0.1'))
 
 
 @lru_cache()
