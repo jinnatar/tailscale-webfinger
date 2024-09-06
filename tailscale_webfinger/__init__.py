@@ -7,9 +7,14 @@ from functools import lru_cache
 import os
 from typing import Any, Dict
 from fastapi import FastAPI, HTTPException, Request
+import uvicorn
 
 
 app = FastAPI()
+
+
+def uvicorn_run():
+    uvicorn.run("tailscale_webfinger:app")
 
 
 @lru_cache()
